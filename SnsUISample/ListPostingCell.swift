@@ -6,4 +6,12 @@
 //  Copyright © 2016年 itvirtuoso. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class ListPostingCell : UITableViewCell {
+    @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
+    
+}

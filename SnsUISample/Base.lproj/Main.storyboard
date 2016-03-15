@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--一覧画面-->
@@ -16,12 +17,81 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NhD-xE-Jsn">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Posting" rowHeight="150" id="9AF-tm-5D5" customClass="ListPostingCell" customModule="SnsUISample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9AF-tm-5D5" id="wl2-1O-al0">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="149"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9xh-L0-2iQ">
+                                                    <rect key="frame" x="8" y="8" width="48" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="48" id="EDl-vG-vya"/>
+                                                        <constraint firstAttribute="height" constant="48" id="ja4-KF-KYI"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投稿者名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSq-tp-nM3">
+                                                    <rect key="frame" x="64" y="8" width="68" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000/00/00 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5f-tN-6AD">
+                                                    <rect key="frame" x="64" y="33" width="129" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Yo-Xw-8O4">
+                                                    <rect key="frame" x="64" y="55" width="528" height="90"/>
+                                                    <mutableString key="text">吾輩は猫である。名前はまだ無い。
+どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。</mutableString>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Y5f-tN-6AD" firstAttribute="leading" secondItem="9xh-L0-2iQ" secondAttribute="trailing" constant="8" id="1PT-Ca-93j"/>
+                                                <constraint firstItem="4Yo-Xw-8O4" firstAttribute="leading" secondItem="9xh-L0-2iQ" secondAttribute="trailing" constant="8" id="Bni-pi-T90"/>
+                                                <constraint firstItem="gSq-tp-nM3" firstAttribute="leading" secondItem="9xh-L0-2iQ" secondAttribute="trailing" constant="8" id="JwV-Tb-XAt"/>
+                                                <constraint firstItem="9xh-L0-2iQ" firstAttribute="leading" secondItem="wl2-1O-al0" secondAttribute="leadingMargin" id="Yz0-tE-V6q"/>
+                                                <constraint firstItem="4Yo-Xw-8O4" firstAttribute="top" secondItem="Y5f-tN-6AD" secondAttribute="bottom" constant="4" id="aka-xg-fpd"/>
+                                                <constraint firstItem="gSq-tp-nM3" firstAttribute="top" secondItem="9xh-L0-2iQ" secondAttribute="top" id="gZG-OR-BIZ"/>
+                                                <constraint firstItem="9xh-L0-2iQ" firstAttribute="top" secondItem="wl2-1O-al0" secondAttribute="topMargin" id="kHc-Up-Ie5"/>
+                                                <constraint firstItem="Y5f-tN-6AD" firstAttribute="top" secondItem="gSq-tp-nM3" secondAttribute="bottom" constant="4" id="qTt-VD-d1B"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="4Yo-Xw-8O4" secondAttribute="trailing" id="xTH-nK-OVB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="avatarImage" destination="9xh-L0-2iQ" id="xdT-o7-Cqt"/>
+                                            <outlet property="contentLabel" destination="4Yo-Xw-8O4" id="oE8-3h-DgS"/>
+                                            <outlet property="dateLabel" destination="Y5f-tN-6AD" id="xiv-Il-nWF"/>
+                                            <outlet property="nameLabel" destination="gSq-tp-nM3" id="Aj8-Mc-hQG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NhD-xE-Jsn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="0ar-dL-hYc"/>
+                            <constraint firstItem="NhD-xE-Jsn" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottomMargin" id="Ghb-8L-LZT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NhD-xE-Jsn" secondAttribute="trailing" constant="-20" id="pWZ-y8-KDY"/>
+                            <constraint firstItem="NhD-xE-Jsn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="u5H-qB-afQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="一覧" id="L2N-wG-UUI">
                         <barButtonItem key="backBarButtonItem" title="戻る" id="WHe-2W-brp"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="NhD-xE-Jsn" id="oDp-pN-wJN"/>
                         <segue destination="OVZ-Nn-r4p" kind="show" identifier="showDetail" id="pJR-uq-LSb"/>
                     </connections>
                 </viewController>
