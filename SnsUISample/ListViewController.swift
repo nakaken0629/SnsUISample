@@ -34,4 +34,8 @@ class ListViewController : UIViewController, UITableViewDataSource, UITableViewD
         cell.contentLabel.text = posting.content
         return cell
     }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return CGFloat(indexPath.row * 20 + 50)
+    }
 }
